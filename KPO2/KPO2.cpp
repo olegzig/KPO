@@ -20,6 +20,6 @@ void  main()
 		system("pause");
 		return;
 	}
-	cout << "\nRez = " << res;
+	cout << "\nRez = " << res <<"\n";
 	system("pause");
 }
