@@ -16,8 +16,10 @@ void  main()
 		cout << "x >= 10 * t";
 	}
 	else {
-		cout << "Not a valid arguments!";
+		cout << "Not a valid arguments!\n";
+		system("pause");
 		return;
 	}
 	cout << "\nRez = " << res;
+	system("pause");
 }

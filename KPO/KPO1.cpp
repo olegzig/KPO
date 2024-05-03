@@ -12,5 +12,6 @@ int main()
 	rez = a - b / c;
 	std::cout << "\n x = " << x << "\n y = " << y << "\n z = " << z
 		<< "\nRezult = " << rez << std::endl;
+	system("pause");
 	return 0;
 }

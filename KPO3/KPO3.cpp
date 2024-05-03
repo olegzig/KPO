@@ -55,4 +55,5 @@ void main()
 	int* result = Count(N, M, T, numbers);
 	cout << "amount of numbers < T = " << result[0] << "\n";
 	cout << "result of multiplying numbers < T = " << result[1] << "\n";
+	system("pause");
 }
