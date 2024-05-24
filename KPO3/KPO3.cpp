@@ -2,23 +2,30 @@
 #include <conio.h>
 using namespace std;
 
-int* Count(unsigned N, unsigned M, int T, int** numbers)
+int Count(unsigned N, unsigned M, int** numbers)
 {
-	int mul = 1;
 	int counter = 0;
 	for (unsigned i{}; i < N; i++)
 	{
 		for (unsigned j{}; j < M; j++)
 		{
-			if (numbers[i][j] < T) {
-				mul *= numbers[i][j];
+			int sum = 0;
+			for (unsigned i2{}; i2 < N; i2++)
+			{
+				if (i2 == i) {
+					continue;
+				}
+				else {
+					sum += numbers[i2][j];
+				}
+			}
+			if (sum <= numbers[i][j]) {
 				counter++;
 			}
 		}
 		cout << endl;
 	}
-	int* result{ new int[4]{counter, mul} };
-	return result;
+	return counter;
 }
 
 void main()
@@ -46,14 +53,8 @@ void main()
 		}
 	}
 
-	// Запрос T
-	int T;
-	cout << "T = ";
-	cin >> T;
-
 	// Подсчёт и вывод результата
-	int* result = Count(N, M, T, numbers);
-	cout << "amount of numbers < T = " << result[0] << "\n";
-	cout << "result of multiplying numbers < T = " << result[1] << "\n";
+	int result = Count(N, M, numbers);
+	cout << "amount unique items = " << result << "\n";
 	system("pause");
 }
